@@ -680,6 +680,13 @@ If you want the predefined quotes as well, use this:
 Same as the custom header, but shown at the bottom of the startify buffer.
 
 ------------------------------------------------------------------------------
+                                                      *g:startify_enable_vimtip*
+>
+    let g:startify_enable_vimtip = 0
+<
+Show vim tip and at footer. |g:startify_custom_footer| should be 0
+
+------------------------------------------------------------------------------
                                                 *g:startify_disable_at_vimenter*
 >
     let g:startify_disable_at_vimenter = 0

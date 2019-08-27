@@ -148,6 +148,11 @@ function! startify#insane_in_the_membrane(on_vimenter) abort
   endif
   call append('$', footer)
 
+  " put vimtip under custom footer
+  if s:vimtip
+    call append('$', startify#fortune#cowtip())
+  endif
+
   setlocal nomodifiable nomodified
 
   call s:set_mappings()
@@ -1112,6 +1117,7 @@ let s:show_special = get(g:, 'startify_enable_special', 1)
 let s:relative_path = get(g:, 'startify_relative_path') ? ':~:.' : ':p:~'
 let s:tf = exists('g:startify_transformations')
 let s:session_dir = startify#get_session_path()
+let s:vimtip = get(g:, 'startify_enable_vimtip', 0)
 
 let s:skiplist = get(g:, 'startify_skiplist', [
       \ 'runtime/doc/.*\.txt',
